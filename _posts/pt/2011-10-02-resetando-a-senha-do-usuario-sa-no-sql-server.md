@@ -7,7 +7,7 @@ comments: true
 categories: [Desenvolvimento, recuperar senha, sa, senha, SQL, sql, sqlserver]
 ---
 
-Pode acontecer com todo mundo de esquecer uma senha, neste pequeno tutorialvou explicar como alterar a senha de qualquer usuário do SQL Server sem ter a senha do administrador.
+Pode acontecer com todo mundo de esquecer uma senha, neste pequeno tutorial vou explicar como alterar a senha de qualquer usuário do SQL Server sem ter a senha do administrador.
 
 O SQL Server permite que seja executado no modo Single User, que permite acesso irrestrito a todas as tabelas e opções do banco de dados. Portanto, essa dica deve ser usada com cuidado.
 

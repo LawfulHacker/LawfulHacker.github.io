@@ -7,23 +7,15 @@ comments: true
 categories: [C#, C#, convert, culture, Desenvolvimento, format]
 ---
 
-Muitas vezes quando estamos desenvolvendo uma aplicação, precisamos que apenas
-um pequeno ponto da aplicação trabalhe em um idioma especifico, que muitas
-vezes pode ser diferente do idioma atual do sistema. Um exemplo disso, é
-consumirmos serviços REST ou JSON em que os números e datas estão em um
-formato especifico, normalmente no idioma inglês, e nossa aplicação
-normalmente está num sistema cujo idioma é português.
+Muitas vezes quando estamos desenvolvendo uma aplicação, precisamos que apenas um pequeno ponto da aplicação trabalhe em um idioma especifico, que muitas vezes pode ser diferente do idioma atual do sistema. Um exemplo disso, é consumirmos serviços REST ou JSON em que os números e datas estão em um formato especifico, normalmente no idioma inglês, e nossa aplicação normalmente está num sistema cujo idioma é português.
 
-No exemplo abaixo, podemos ver bem o problema de qual estou falando. Em um
-sistema em pt-BR teremos *3135* enquanto em um sistema en-US teremos *31.35*.
+No exemplo abaixo, podemos ver bem o problema de qual estou falando. Em um sistema em pt-BR teremos *3135* enquanto em um sistema en-US teremos *31.35*.
 
 ```csharp
 Console.WriteLine(decimal.Parse("31.35"));
 ```
 
-Quando consumimos serviços que retornam texto, normalmente o idioma em questão
-é conhecido, assim podemos forçar o idioma do sistema definindo os valores do
-idioma da *Thread* atual, como abaixo:
+Quando consumimos serviços que retornam texto, normalmente o idioma em questão é conhecido, assim podemos forçar o idioma do sistema definindo os valores do idioma da *Thread* atual, como abaixo:
 
 ```csharp
 var culture = new CultureInfo("en-US");
@@ -34,10 +26,7 @@ Thread.CurrentThread.CurrentUICulture = culture;
 Console.WriteLine(decimal.Parse("31.35"));
 ```
 
-A desvantagem é que estamos mudando todo o idioma da aplicação, inclusive nos
-textos que são mostrados para o usuário. Uma alternativa, é utilizarmos a
-classe abaixo, que encapsula um pequeno bloco de código em um idioma
-especifico, retornando ao idioma atual após o final do bloco.
+A desvantagem é que estamos mudando todo o idioma da aplicação, inclusive nos textos que são mostrados para o usuário. Uma alternativa, é utilizarmos a classe abaixo, que encapsula um pequeno bloco de código em um idioma especifico, retornando ao idioma atual após o final do bloco.
 
 ```csharp
 public class GinxCultureHelper : IDisposable

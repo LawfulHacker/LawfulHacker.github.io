@@ -8,19 +8,13 @@ comments: true
 categories: [VPN, Windows 10]
 ---
 
-Está é uma dica bem simples e rápida para quem acessa a VPN do trabalho mas
-não quer que seu tráfego de internet seja routeado pela conexão VPN, o que
-além de deixar mais lento seu acesso de internet faz com que certas restrições
-possam ser impostas quais serviços você pode acessar.
+Está é uma dica bem simples e rápida para quem acessa a VPN do trabalho mas não quer que seu tráfego de internet seja routeado pela conexão VPN, o que além de deixar mais lento seu acesso de internet faz com que certas restrições possam ser impostas quais serviços você pode acessar.
 
-O Windows 10 alterou diversas formas de configuração em relação as versões
-anteriores.
+O Windows 10 alterou diversas formas de configuração em relação as versões anteriores.
 
-Nesta versão, não é possivel abrir as configurações de IP para os adaptadores
-do tipo VPN.
+Nesta versão, não é possível abrir as configurações de IP para os adaptadores do tipo VPN.
 
-Assim, você pode usar os seguintes comando no PowerShell para listar as
-propriedades de suas conexões VPN:
+Assim, você pode usar os seguintes comando no PowerShell para listar as propriedades de suas conexões VPN:
 
 ```PowerShell
 Get-VpnConnection
@@ -46,12 +40,10 @@ DnsSuffix             :
 IdleDisconnectSeconds : 0
 ```
 
-Para fazer com que o tráfego de internet não passe pela VPN, devemos
-configurar a propriedade `SplitTunneling` para `True`, fazemos isso assim:
+Para fazer com que o tráfego de internet não passe pela VPN, devemos configurar a propriedade `SplitTunneling` para `True`, fazemos isso assim:
 
 ```PowerShell
 Set-VpnConnection -Name "VPN MinhaEmpresa" -SplitTunneling $True
 ```
 
-Pronto, agora você pode navegar normalmente enquanto acessa os recursos
-internos da rede da sua empresa.
+Pronto, agora você pode navegar normalmente enquanto acessa os recursos internos da rede da sua empresa.
