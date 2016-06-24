@@ -14,15 +14,22 @@ author: Sergio Garcia
 twitter_username: sergio_ykz
 github_username:  sergio-garcia
 
-# GitHub override this
-safe: true
-lsi: false
-
 # Build settings
-markdown: redcarpet
-highlighter: pygments
+kramdown:
+  input: GFM
+  hard_wrap: false
 permalink: /blog/:title/
 paginate: 5
+gems:
+  - jekyll-coffeescript
+  - jekyll-paginate
+
+# GitHub override this
+lsi: false
+safe: true
+highlighter: rouge
+gist:
+  noscript: false
 
 defaults:
   -
