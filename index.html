@@ -4,15 +4,17 @@ layout:
 <!DOCTYPE html>
 <html>
   <head>
-  <meta http-equiv="refresh" content="5; url=/pt/" />
-  <script>
-    var supportedLanguages = ['en', 'pt'], language = window.navigator.userLanguage || window.navigator.language;
-    language = language.split('-')[0];
-    if (supportedLanguages.indexOf('language')) {
-      window.location.href = '/' + language + '/';
-    }
-  </script>
+    <meta name="google-site-verification" content="Io4IQNC5EOPVfttPoX-Vns5Y1z6cB6nFCTVQ50ruADw" />
+    <meta http-equiv="refresh" content="5; url=/pt/" />
+    <script>
+      var supportedLanguages = ['en', 'pt'], language = window.navigator.userLanguage || window.navigator.language;
+      language = language.split('-')[0];
+      if (supportedLanguages.indexOf('language')) {
+        window.location.href = '/' + language + '/';
+      }
+    </script>
   </head>
   <body>
+    {% include google-tag-manager.html %}
   </body>
 </html>
